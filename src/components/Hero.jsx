@@ -48,9 +48,10 @@ const Hero = () => {
     const endValue = isMobile ? '120% top%': 'botton top';
 
     // Video animation timeline
-    videoTimelineRef.current = gsap.timeline({
+    // Create the timeline with a default duration
+    let tl = gsap.timeline({
         scrollTrigger: {
-            trigger: '#video',
+            trigger: 'video',
             start: startValue,
             end: endValue,
             scrub: true,
@@ -59,7 +60,7 @@ const Hero = () => {
     })
 
     videoRef.current.onloadedmetadata = () => {
-        videoTimelineRef.to(videoRef.current, {
+        tl.to(videoRef.current, {
             currentTime: videoRef.current.duration,
         });
     };
@@ -100,7 +101,7 @@ const Hero = () => {
     <div className='video absolute inset-0'>
         <video
             ref={videoRef}
-            src="/videos/input.mp4" 
+            src="/videos/output.mp4" 
             muted
             playsInline
             preload='auto'
