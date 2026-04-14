@@ -7,7 +7,7 @@ import { useMediaQuery } from 'react-responsive';
 
 const Hero = () => {
     const videoRef = useRef();
-    const videoTimelineRef = useRef();
+    // const videoTimelineRef = useRef();
 
     const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -45,7 +45,7 @@ const Hero = () => {
     .to('.left-leaf', { y: -200 }, 0)
 
     const startValue = isMobile ? 'top 50%' :'center 60%';
-    const endValue = isMobile ? '120% top%': 'botton top';
+    const endValue = isMobile ? '120% top%': 'bottom top';
 
     // Video animation timeline
     // Create the timeline with a default duration

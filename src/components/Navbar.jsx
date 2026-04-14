@@ -5,7 +5,7 @@ import { gsap } from 'gsap'
 
 const Navbar = () => {
   useGSAP(() => {
-    // GSAP animation logic can be added here
+    // GSAP animation logic
     const navTween = gsap.timeline({
       scrollTrigger: {
         trigger: 'nav',
