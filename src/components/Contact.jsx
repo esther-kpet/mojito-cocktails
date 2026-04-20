@@ -21,7 +21,12 @@ const Contact = () => {
         .from('#contact h3, #contact p', {
             opacity: 0, yPercent: 100, stagger: 0.02
         })
-        .to()
+        .to('#f-right-leaf', {
+            y: '-50', duration: 1, ease: 'power1.inOut'
+        })
+        .to('#f-left-leaf', {
+            y: '-50', duration: 1, ease: 'power1.inOut'
+        }, '<')
     });
 
   return (
@@ -33,21 +38,21 @@ const Contact = () => {
             <h2>Where to find us?</h2>
 
             <div>
-                <h3>Visit our bar</h3>
+                <h3>VISIT OUR BAR</h3>
                 <p>216, Main Street. #101, Antalya, Turkey</p>
             </div>
             <div>
-                <h3>Contact Us</h3>
+                <h3>CONTACT US</h3>
                 <p>Email: info@mojitococktails.com</p>
                 <p>Phone: +90 242 123 45 67</p>
             </div>
-            <div>Open everyday</div>
+            <div>OPEN EVERY DAY</div>
                 {openingHours.map((time) => (
                     <p key={time.day}>{time.day} : {time.time}</p>
                 ))}
         </div>
         <div>
-            <h3>Socials</h3>
+            <h3>SOCIALS</h3>
             <div className='flex-center gap-5'>
                 {socials.map((social) => (
                     <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
